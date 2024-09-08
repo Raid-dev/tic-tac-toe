@@ -1,0 +1,675 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(45deg, rgb(61, 61, 200), rgb(212, 69, 69));
+    color: whitesmoke;
+    letter-spacing: 2px;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: "Comic Sans MS", cursive;
+}
+.rotation_btn {
+    transition: transform 10s linear;
+}
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 90%;
+}
+
+.sides-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 40%;
+    left: 50%;
+}
+.sides {
+    text-align: center;
+    width: 10rem;    
+    font-size: 1.6rem;
+    border-radius: 8px;
+    padding: 2%;
+}
+.p1-side {
+    float: left;
+}
+.p2-side {
+    float: right;
+}
+.p1-name span, .p2-name span {
+    font-size: 1.8rem;
+}
+.p1-name span {
+    color: rgb(238, 64, 64);
+}
+.p2-name span{
+    color: rgb(63, 63, 237);
+}
+
+.prompt {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 10%;
+    left: 50%;
+    font-size: 2rem;
+}
+
+.plate-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: -0.1%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0rem;
+}
+.plates {
+    width: 8rem;
+    height: 8rem;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.plates:hover {
+    outline: 3px solid yellow;
+    border: none;
+}
+.plate-4, .plate-5, .plate-6, .plate-7, .plate-8, .plate-9 {
+    border-top: 2px solid whitesmoke;
+}
+.plate-1, .plate-2, .plate-4, .plate-5, .plate-7, .plate-8 {
+    border-right: 2px solid whitesmoke;
+}
+.plate-1, .plate-2, .plate-3, .plate-4, .plate-5, .plate-6 {
+    border-bottom: 2px solid whitesmoke;
+}
+.plate-2, .plate-3, .plate-5, .plate-6, .plate-8, .plate-9 {
+    border-left: 2px solid whitesmoke;
+}
+.sign {
+    display: none;
+    font-size: 7rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.25rem;
+}
+
+/*//////   QUIT BUTTON STYLES   //////*/
+
+.quit-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    letter-spacing: 1px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.quit-btn:active, .quit-btn:hover {
+    outline: 0;
+}
+.quit-btn span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+.quit-btn:hover span {
+    background: none;
+}
+.quit-btn {
+    cursor: pointer;
+}
+.quit-btn a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/* //   FEEDBACK WINDOW STYLES   // */
+.feedback-window {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(172, 172, 56);;
+    border-radius: 1rem;
+    outline: 4px solid rgb(103, 103, 36);
+    z-index: 2;
+    padding: 3rem;
+}
+.feedback-window form {
+    margin-bottom: 9rem;
+}
+.feedback-window label {
+    font-size: 1.4rem;
+}
+
+.feedback-window textarea {
+    border-radius: 4px;
+    outline: 4px solid rgb(64, 238, 122);
+    border: none;
+    margin-top: 2px;
+    text-transform: capitalize;
+    resize: none;
+}
+.feedback-window textarea:focus {
+    outline: 6px solid rgb(194, 101, 83);
+}
+
+.player-feedbacks {
+    display: none;
+}
+
+.send-feedback-btn {
+    color: #fff;
+    background-color: #198754;
+    text-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    border-color: #198754;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    font-size: 1.6rem;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.send-feedback-btn:hover {
+    color: #fff;
+    border-color: #146c43;
+    background-color :#157347;
+}
+
+/* LINES */
+
+.line {
+    display: none;
+    width: 0.3rem;
+    height: 0.2rem;  
+    background-color: #05062D;
+    position: absolute;
+    outline: 0.2rem solid rgb(30, 39, 49);
+    border-radius: 2px;
+    z-index: 1;
+    transition: width 0.5s, height 0.5s;
+}
+
+/* ////   RESPONSIVE DESIGN   //// */
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .sides-container {
+        width: 100%;
+        top: 24%;
+    }
+    .sides {
+        width: 7rem;
+        font-size: 0.9rem;
+    }
+    .p1-name span, .p2-name span {
+        font-size: 1.2rem;
+    }
+    .sign {
+        font-size: 7rem;
+    }
+    .prompt {
+        top: 13%;
+        font-size: 1.4rem;
+    }
+    .plates {
+        width: 5rem;
+        height: 5rem;
+    }
+    .quit-btn {
+        width: 25%;
+        margin-top: 37%;
+    }
+    .sign {
+        font-size: 4rem;
+        margin-left: 1.1rem;
+    }
+    .feedback-window { 
+        padding: 2rem;
+    }    
+    .feedback-window h2 {
+        font-size: 1.1rem;
+    }
+    .player-feedbacks {
+        margin: 0.6rem;
+    }
+    #p2-feedback {
+        margin-bottom: 4rem;
+    }
+    .feedback-window label {
+        font-size: 1.2rem;
+    }
+    .send-feedback-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .line-1, .line-2, .line-3 {
+        left: 29%;
+        width: 42vw;
+    }
+    .line-1 {
+        top: 38%;
+    }
+    .line-2 {  
+        top: 50%;
+    }
+    .line-3 {  
+        top: 61%;
+    }
+
+    .line-4, .line-5, .line-6 {
+        top: 36%;
+        height: 28vh;
+    }
+    .line-4 {  
+        left: 33%;
+    }
+    .line-5 {  
+        left: 50%;
+    }
+    .line-6 {  
+        left: 67%;
+    }
+
+    .line-7, .line-8 {
+        height: 35vh;
+        top: 32%;
+        left: 50%;
+    }
+    .line-7 {
+        transform: rotate(-45deg);
+    }
+    .line-8 {
+        transform:  rotate(45deg);
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+    .sides-container {
+        width: 100%;
+        top: 44%;
+    }
+    .prompt {
+        top: 12%;
+        font-size: 1.6rem;
+    }
+    .plates {
+        width: 6rem;
+        height: 6rem;
+    }
+    .sides {
+        width: 8rem;
+        font-size: 1.1rem;
+    }
+    .p1-name span, .p2-name span {
+        font-size: 1.4rem;
+    }
+    .quit-btn {
+        width: 22%;
+        margin-top: 30%;
+    }
+    .sign {
+        font-size: 5rem;
+        margin-left: 1.15rem;
+    }
+    .feedback-window { 
+        padding: 2.2rem;
+    }    
+    .feedback-window h2 {
+        font-size: 1.2rem;
+    }
+    .player-feedbacks {
+        margin: 0.7rem;
+    }
+    #p2-feedback {
+        margin-bottom: 4rem;
+    }
+    .feedback-window label {
+        font-size: 1.2rem;
+    }
+    .send-feedback-btn {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .line-1, .line-2, .line-3 {
+        left: 29%;
+        width: 42vw;
+    }
+    .line-1 {
+        top: 36%;
+    }
+    .line-2 {  
+        top: 50%;
+    }
+    .line-3 {  
+        top: 63%;
+    }
+
+    .line-4, .line-5, .line-6 {
+        top: 34%;
+        height: 33vh;
+    }
+    .line-4 {  
+        left: 34%;
+    }
+    .line-5 {  
+        left: 50%;
+    }
+    .line-6 {  
+        left: 66%;
+    }
+
+    .line-7, .line-8 {
+        height: 42vh;
+        top: 29%;
+        left: 50%;
+    }
+    .line-7 {
+        transform: rotate(-45deg);
+    }
+    .line-8 {
+        transform:  rotate(45deg);
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .sides-container {
+        width: 91.66%;
+        top: 42%;
+    }
+    .prompt {
+        top: 11%;
+        font-size: 1.8rem;
+    }
+    .plates {
+        width: 7rem;
+        height: 7rem;
+    }
+    .sides {
+        width: 9rem;
+        font-size: 1.3rem;
+    }
+    .p1-name span, .p2-name span {
+        font-size: 1.6rem;
+    }
+    .quit-btn {
+        width: 19%;
+        margin-top: 23%;
+    }
+    .sign {
+        font-size: 6rem;
+        margin-left: 1.2rem;
+    }
+    .feedback-window { 
+        padding: 2.4rem;
+    }    
+    .feedback-window h2 {
+        font-size: 1.3rem;
+    }
+    .player-feedbacks {
+        width: 40%;
+        margin: 0.8rem;
+    }
+    .player-feedbacks textarea {
+        font-size: 0.8rem;
+        width: 100%;
+    }    
+    .p1-feedback textarea {
+        margin-right: 1rem;
+    } 
+    .feedback-window label {
+        font-size: 1.3rem;
+    }
+    .send-feedback-btn {
+        font-size: 1.3rem;
+    }
+
+    .line-1, .line-2, .line-3 {
+        left: 31%;
+        width: 37vw;
+    }
+    .line-1 {
+        top: 34%;
+    }
+    .line-2 {  
+        top: 50%;
+    }
+    .line-3 {  
+        top: 65%;
+    }
+
+    .line-4, .line-5, .line-6 {
+        top: 31%;
+        height: 38vh;
+    }
+    .line-4 {  
+        left: 35%;
+    }
+    .line-5 {  
+        left: 50%;
+    }
+    .line-6 {  
+        left: 65%;
+    }
+
+    .line-7, .line-8 {
+        height: 48vh;
+        top: 26%;
+        left: 50%;
+    }
+    .line-7 {
+        transform: rotate(-45deg);
+    }
+    .line-8 {
+        transform:  rotate(45deg);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .sides-container {
+        width: 83.33%;
+        top: 40%;
+    }
+    .prompt {
+        top: 10%;
+        font-size: 2rem;
+    }
+    .plates {
+        width: 8rem;
+        height: 8rem;
+    }
+    .sides {
+        width: 10rem;
+        font-size: 1.5rem;
+    }
+    .p1-name span, .p2-name span {
+        font-size: 1.8rem;
+    }
+    .quit-btn {
+        width: 16%;
+        margin-top: 20%;
+    }
+    .sign {
+        font-size: 7rem;
+        margin-left: 1.25rem;
+    }
+    .feedback-window { 
+        padding: 2.6rem;
+    }    
+    .feedback-window h2 {
+        font-size: 1.4rem;
+    }
+    .player-feedbacks {
+        margin: 1rem;
+    }
+    .player-feedbacks textarea {
+        font-size: 0.9rem;
+    }    
+    .feedback-window label {
+        font-size: 1.4rem;
+    }
+    .send-feedback-btn {
+        font-size: 1.4rem;
+    }
+
+    .line-1, .line-2, .line-3 {
+        left: 33%;
+        width: 33vw;
+    }
+    .line-1 {
+        top: 32%;
+    }
+    .line-2 {  
+        top: 50%;
+    }
+    .line-3 {  
+        top: 68%;
+    }
+
+    .line-4, .line-5, .line-6 {
+        top: 28%;
+        height: 44vh;
+    }
+    .line-4 {  
+        left: 37%;
+    }
+    .line-5 {  
+        left: 50%;
+    }
+    .line-6 {  
+        left: 63%;
+    }
+
+    .line-7, .line-8 {
+        height: 56vh;
+        top: 22%;
+        left: 50%;
+    }
+    .line-7 {
+        transform: rotate(-45deg);
+    }
+    .line-8 {
+        transform:  rotate(45deg);
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .sides-container {
+        width: 75%;
+    }
+    .prompt {
+        font-size: 2.2rem;
+    }
+    .plates {
+        width: 9rem;
+        height: 9rem;
+    }
+    .sides {
+        width: 11rem;
+        font-size: 1.7rem;
+    }
+    .p1-name span, .p2-name span {
+        font-size: 1.9rem;
+    }
+    .quit-btn {
+        width: 13%;
+        margin-top: 17%;
+    }
+    .feedback-window { 
+        padding: 2.8rem;
+    }    
+    .feedback-window h2 {
+        font-size: 1.5rem;
+    }
+    .player-feedbacks {
+        margin: 1.2rem;
+    }
+    .player-feedbacks textarea {
+        font-size: 1rem;
+    }    
+    .feedback-window label {
+        font-size: 1.5rem;
+    }
+    .send-feedback-btn {
+        font-size: 1.5rem;
+    }
+
+    .line-1, .line-2, .line-3 {
+        left: 37%;
+        width: 25vw;
+    }
+    .line-1 {
+        top: 29%;
+    }
+    .line-2 {  
+        top: 49%;
+    }
+    .line-3 {  
+        top: 69%;
+    }
+
+    .line-4, .line-5, .line-6 {
+        top: 25%;
+        height: 49vh;
+    }
+    .line-4 {  
+        left: 40%;
+    }
+    .line-5 {  
+        left: 50%;
+    }
+    .line-6 {  
+        left: 59%;
+    }
+
+    .line-7, .line-8 {
+        height: 63vh;
+        top: 18%;
+        left: 50%;
+    }
+    .line-7 {
+        transform: rotate(-45deg);
+    }
+    .line-8 {
+        transform:  rotate(45deg);
+    }
+}
+
+/* /////////////////////////////// */

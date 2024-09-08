@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: linear-gradient(45deg, rgb(61, 61, 200), rgb(212, 69, 69));
+}
+
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 90%;
+}
+
+.header, form, .players-counter {
+    position: absolute;
+    left: -0.1%;
+}
+.header {
+    /* font-family: "Comic Sans MS", cursive; */
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    word-spacing: 0.3rem;
+    cursor: default;
+}
+
+#game-heading span:nth-child(1) , .x-sign {
+    color: rgb(238, 64, 64);
+}
+#game-heading span:nth-child(2) {
+    color: rgb(225, 225, 76);
+    text-shadow: 1px 2px black;
+    background-clip: text;
+    margin: 2%;
+}
+#game-heading span:nth-child(3) , .o-sign{
+    color: rgb(63, 63, 237);
+}
+
+#git-link a {
+    color: azure;
+}
+#git-link {
+    font-size: 1.1rem;
+    color: azure;
+    letter-spacing: 1px;
+}
+
+form {
+    display: grid;
+    font-size: 1.2rem;
+    width: 42%;
+    gap: 20%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    grid-template-columns: auto auto;
+}
+
+label {
+    color: azure;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 10%;
+}
+
+.players span {
+    font-size: 1.4rem;
+    color: azure;
+    cursor: default;
+}
+.players span::before, .players span::after {
+    content: "|";
+    color: rgb(64, 238, 122);
+}
+
+input {
+    font-size: 1.1rem;
+}
+
+.names {
+    text-transform: capitalize;
+}
+.names, .passwords {
+    border-radius: 2px;
+    outline: 4px solid rgb(64, 238, 122);
+    border: none;
+}
+.names:focus, .passwords:focus {
+    outline: 6px solid rgb(202, 232, 72);
+}
+
+/*//////   PLAY BUTTON STYLES   //////*/
+
+.play-btn {
+    margin-top: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    align-items: center;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    width: 30%;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.play-btn:active, .play-btn:hover {
+    outline: 0;
+}
+.play-btn span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+.play-btn:hover span {
+    background: none;
+}
+.play-btn {
+    cursor: pointer;
+}
+
+.players-counter {
+    font-size: 110%;
+    color: azure;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+ 
+/* ///////////////////////////////////////////// */
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .col-xs-1 {width: 8.33%;}
+    .col-xs-2 {width: 16.66%;}
+    .col-xs-3 {width: 25%;}
+    .col-xs-4 {width: 33.33%;}
+    .col-xs-5 {width: 41.66%;}
+    .col-xs-6 {width: 50%;}
+    .col-xs-7 {width: 58.33%;}
+    .col-xs-8 {width: 66.66%;}
+    .col-xs-9 {width: 75%;}
+    .col-xs-10 {width: 83.33%;}
+    .col-xs-11 {width: 91.66%;}
+    .col-xs-12 {width: 100%;}
+    .players-counter {
+        bottom: 10%;
+    }
+    .players span {
+        font-size: 1.2rem;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    .players-counter {
+        bottom: 8%;
+    }
+    .players span {
+        font-size: 1.25rem;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+    .players-counter {
+        bottom: 6%;
+    }
+    .players span {
+        font-size: 1.3rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .col-l-1 {width: 8.33%;}
+    .col-l-2 {width: 16.66%;}
+    .col-l-3 {width: 25%;}
+    .col-l-4 {width: 33.33%;}
+    .col-l-5 {width: 41.66%;}
+    .col-l-6 {width: 50%;}
+    .col-l-7 {width: 58.33%;}
+    .col-l-8 {width: 66.66%;}
+    .col-l-9 {width: 75%;}
+    .col-l-10 {width: 83.33%;}
+    .col-l-11 {width: 91.66%;}
+    .col-l-12 {width: 100%;}
+    .players-counter {
+        bottom: 4%;
+    }
+    .players span {
+        font-size: 1.35rem;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .col-xl-1 {width: 8.33%;}
+    .col-xl-2 {width: 16.66%;}
+    .col-xl-3 {width: 25%;}
+    .col-xl-4 {width: 33.33%;}
+    .col-xl-5 {width: 41.66%;}
+    .col-xl-6 {width: 50%;}
+    .col-xl-7 {width: 58.33%;}
+    .col-xl-8 {width: 66.66%;}
+    .col-xl-9 {width: 75%;}
+    .col-xl-10 {width: 83.33%;}
+    .col-xl-11 {width: 91.66%;}
+    .col-xl-12 {width: 100%;}
+    .players-counter {
+        bottom: 2%;
+    }
+    .players span {
+        font-size: 1.4rem;
+    }
+}
